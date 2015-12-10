@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <script data-main="js/index.js" src="libs/require.js"></script>
+
+    <title></title>
+</head>
+<body ng-controller="indexController">
+    <!--<a href="A01HelloWorld.html">A01HelloWorld.html</a>-->
+    <ul class="menu"><li ng-repeat="page in pages | filter: pageFilter('A')"><a href="{{page.url}}">{{page.name}}</a></li></ul>
+    <ul class="menu"><li ng-repeat="page in pages | filter: pageFilter('B')"><a href="{{page.url}}">{{page.name}}</a></li></ul>
+    <ul class="menu"><li ng-repeat="page in pages | filter: pageFilter('C')"><a href="{{page.url}}">{{page.name}}</a></li></ul>
+    <ul class="menu"><li ng-repeat="page in pages | filter: pageFilter('D')"><a href="{{page.url}}">{{page.name}}</a></li></ul>
+    <ul class="menu"><li ng-repeat="page in pages | filter: pageFilter('E')"><a href="{{page.url}}">{{page.name}}</a></li></ul>
+
+<br/>
+</body>
+</html>

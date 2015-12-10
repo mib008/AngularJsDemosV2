@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html ng-app xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+
+        <script src="http://cdn.bootcss.com/angular.js/1.1.0/angular.min.js"></script>
+
+        <script src="Scripts/B04Controllers.js"></script>
+        
+        <style>
+            body {
+                font-family: Verdana,sans-serif;
+                font-size: 0.8em;
+            }
+
+            .draggable-article {
+                width: 250px;
+                float: left;
+                margin: 10px;
+                padding: 0px;
+            }
+
+            .draggable-article-header {
+                background: black;
+                color: white;
+                margin: 0px;
+                padding: 5px;
+            }
+
+            .draggable-article-content {
+                padding: 5px;
+            }
+
+            div#header, div#footer, div#content, div#post {
+                border: 1px solid grey;
+                margin: 5px;
+                margin-bottom: 15px;
+                padding: 8px;
+                background-color: white;
+            }
+
+            div#header, div#footer {
+                color: white;
+                background-color: #444;
+                margin-bottom: 5px;
+            }
+
+            div#content {
+                background-color: #ddd;
+                overflow: auto;
+            }
+
+            div#menu ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            div#menu ul li {
+                display: inline;
+                margin: 5px;
+            }
+
+            div#logger-div {
+                overflow: auto;
+            }
+
+            div#logger-label {
+                width: auto;
+                display: inline;
+                float: left;
+                margin: 0px 5px 0px 0px;
+            }
+
+            div#logger-textarea {
+                display: inline;
+                float: left;
+                width: auto;
+            }
+
+            header, footer, section, article {
+                border: 1px solid grey;
+                margin: 5px;
+                margin-bottom: 15px;
+                padding: 8px;
+                background-color: white;
+            }
+
+            header, footer {
+                color: white;
+                background-color: #444;
+                margin-bottom: 5px;
+            }
+
+            section {
+                background-color: #ddd;
+                overflow: auto;
+            }
+
+            nav ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            nav ul li {
+                display: inline;
+                margin: 5px;
+            }
+
+            .draggable-article {
+            }
+        </style>
+
+        <title>B04DependecyInjection</title>
+    </head>
+<body>
+<!--<section ng-controller="PhoneListCtrl">
+    <article ng-repeat="phone in phones" class="draggable-article">
+        <p class="draggable-article-header">{{phone.name}}</p>
+        <p class="draggable-article-content">{{phone.snippet}}
+        </p>
+    </article>
+
+    <p style="clear: both;">My family and I visited The Epcot center this summer.</p>
+</section>-->
+
+<section ng-controller="GpuListCtrl">
+    <article ng-repeat="card in items" class="draggable-article" ng-click="ListChipsFunc()">
+        <!-- No whitespace in property name -->
+        <p class="draggable-article-header">{{card.ProductName}}</p>
+        <p class="draggable-article-content">{{card.GPUChip}}</p>
+    </article>
+</section>
+</body>
+</html>

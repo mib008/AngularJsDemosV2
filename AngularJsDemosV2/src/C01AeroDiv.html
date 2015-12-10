@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="//www.googletagmanager.com/gtm.js?id=GTM-54XBBG" async=""></script>
+    <script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.10.1.min.js"></script>
+
+    <script type="text/javascript">
+        // On mouse over
+        $(document).ready(
+            function () {
+                $("a img").hover(function () {
+                    $(this).fadeTo("fast", 0.6);
+                }, function () {
+                    $(this).fadeTo("fast", 1.0);
+                });
+            });
+    </script>
+    
+    <script type="text/javascript">
+    $(function () {
+        setInterval(function () {
+            $('.message').fadeTo(1000, 0.4).fadeTo(1000, 1);
+        }, 100);
+    });
+    </script>
+
+    <script type="text/javascript">
+        $(function() {
+            //モーダルウィンドウを出現させるクリックイベント
+            $("#modal-open").click(
+                function() {
+                    //オーバーレイを出現させる
+                    $("body").append('<div id="modal-overlay"></div>');
+                    $("#modal-overlay").fadeIn("slow");
+                    //コンテンツをセンタリングする
+                    centeringModalSyncer();
+                    //コンテンツをフェードインする
+                    $("#modal-content").fadeIn("slow");
+
+                    $("body").fadeTo("fast", 0.6);
+
+                    //[#modal-overlay]、または[#modal-close]をクリックしたら…
+                    $("#modal-overlay,#modal-close").unbind().click(
+                        function() {
+                            //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
+                            $("#modal-content,#modal-overlay").fadeOut("slow", function() {
+                                //[#modal-overlay]を削除する
+                                $('#modal-overlay').remove();
+                            });
+                            
+                            $("body").fadeTo("fast", 1.0);
+                        });
+                });
+            //リサイズされたら、センタリングをする関数[centeringModalSyncer()]を実行する
+            $(window).resize(centeringModalSyncer);
+            //センタリングを実行する関数
+            function centeringModalSyncer() {
+                //画面(ウィンドウ)の幅、高さを取得
+                var w = $(window).width();
+                var h = $(window).height();
+                //コンテンツ(#modal-content)の幅、高さを取得
+                var cw = $("#modal-content").outerWidth({
+                    margin: true
+                });
+                var ch = $("#modal-content").outerHeight({
+                    margin: true
+                });
+                //センタリングを実行する
+                $("#modal-content").css({
+                    "left": ((w - cw) / 2) + "px",
+                    "top": ((h - ch) / 2) + "px"
+                });
+            }
+        });
+
+        $(
+            function() {
+                setInterval(
+                    function() {
+                        $('.message').fadeTo(1000, 0.5).fadeTo(1000, 1);
+                    }, 100);
+            }
+        );
+    </script>
+
+    <link rel="stylesheet" media="all" type="text/css" href="css/B03Reset.css" /><!-- reset css -->
+    <link rel="stylesheet" media="all" type="text/css" href="css/B03Style.css" /><!-- default -->
+
+    <title></title>
+</head>
+
+<body>
+    <!--<script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-54XBBG');
+    </script>-->
+
+    <div id="modal-content">
+        <p>
+            <h4>modal-content Div title</h4>
+        </p>
+        <p>
+            <img src="images/mainBtn03.png">
+        </p>
+        <p class="close">
+            <a class="button-link" id="modal-close">
+                <img style="-ms-opacity: 1; opacity: 1;" src="images/close.png">
+            </a>
+        </p>
+    </div>
+
+    <div id="wrapper">
+        <div id="container">
+            <div class="message" style="-ms-opacity: 1; opacity: 1; align-self: auto;">
+                <a class="button-link" id="modal-open">
+                    <img style="-ms-opacity: 1; opacity: 1;" src="images/message.png">
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

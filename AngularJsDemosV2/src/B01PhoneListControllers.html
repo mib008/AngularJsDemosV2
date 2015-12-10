@@ -1,0 +1,588 @@
+﻿<!DOCTYPE html>
+<html ng-app>
+
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="msapplication-tap-highlight" content="no" />
+
+        <script src="http://cdn.bootcss.com/angular.js/1.1.0/angular.min.js"></script>
+
+        <script src="Scripts/B01Controllers.js"></script>
+
+        <meta charset="utf-8">
+        <title>Phone List Controllers</title>
+
+        <script>
+            function AlertTest() {
+                alert("Button clicked");
+            }
+        </script>
+
+        <style>
+            body {
+                font-family: Verdana,sans-serif;
+                font-size: 0.8em;
+            }
+
+            .draggable-article {
+                width: 250px;
+                float: left;
+                margin: 10px;
+                padding: .5rem;
+            }
+
+            .draggable-article-header {
+                background: black;
+                color: white;
+                margin: 0px;
+                padding: 5px;
+            }
+
+            .draggable-article-content {
+                padding: 5px;
+            }
+
+            div#header, div#footer, div#content, div#post {
+                border: 1px solid grey;
+                margin: 5px;
+                margin-bottom: 15px;
+                padding: 8px;
+                background-color: white;
+            }
+
+            div#header, div#footer {
+                color: white;
+                background-color: #444;
+                margin-bottom: 5px;
+            }
+
+            div#content {
+                background-color: #ddd;
+                overflow: auto;
+            }
+
+            div#menu ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            div#menu ul li {
+                display: inline;
+                margin: 5px;
+            }
+
+            div#logger-div {
+                overflow: auto;
+            }
+
+            div#logger-label {
+                width: auto;
+                display: inline;
+                float: left;
+                margin: 0px 5px 0px 0px;
+            }
+
+            div#logger-textarea {
+                display: inline;
+                float: left;
+                width: auto;
+            }
+
+            header, footer, section, article {
+                border: 1px solid grey;
+                margin: 5px;
+                margin-bottom: 15px;
+                padding: 8px;
+                background-color: white;
+            }
+
+            header, footer {
+                color: white;
+                background-color: #444;
+                margin-bottom: 5px;
+            }
+
+            section {
+                background-color: #ddd;
+                overflow: auto;
+            }
+
+            nav ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            nav ul li {
+                display: inline;
+                margin: 5px;
+            }
+
+            .draggable-article {
+            }
+        </style>
+
+
+    </head>
+
+    <body>
+        <section ng-controller="PhoneListCtrl">
+            <article class="draggable-article" ng-repeat="phoneA in phones">
+                <p>
+                    Phone name: {{phoneA.name}}
+                    <p>Snippet: {{phoneA.snippet}}</p>
+                    <p>Snippet: {{phoneA.snippetss}}</p>
+                </p>
+            </article>
+
+            <!--<ul>
+            <li ng-repeat="videoCard in videoCards">
+                GPU: {{videoCard.gpu}}
+                <p>GPU Variant: {{videoCard.gpuVariant}}</p>
+                <p>Shading Units: {{videoCard.shadingUnits}}</p>
+            </li>
+        </ul>-->
+        </section>
+
+        <div ng-controller="GeforceGraphicCardCtrl">
+            <ul>
+                <li ng-repeat="videoCard in videoCards">
+                    GPU: {{videoCard.gpu}}
+                    <p>GPU Variant: {{videoCard.gpuVariant}}</p>
+                    <p>Shading Units: {{videoCard.shadingUnits}}</p>
+                </li>
+            </ul>
+        </div>
+        
+        <!--<ul>
+            <li ng-repeat="videoCard in videoCards">
+                Card name: {{videoCard.name}}
+                <p>Snippet: {{videoCard.snippet}}</p>
+            </li>
+        </ul>-->
+
+        <ul>
+            Version 025
+
+            <br />
+            <button onclick="AlertTest()">AlertTest()</button>
+            <br />
+            <button onclick="ScriptTest()">ScriptTest()</button>
+        </ul>
+
+        <!--<li>
+            <div class="sectioncontainer masonry" style="height: 1864px; position: relative;">
+
+                <section class="details masonry-brick" style="left: 0px; top: 10px; position: absolute;">
+                    <h1>Retail boards based on this design</h1>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="cursor: pointer;">GPU</th>
+                                <th style="cursor: pointer;">GPU Clock</th>
+                                <th style="cursor: pointer;">Memory Clock</th>
+                                <th>Other Changes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-sort="ASUS GTX 980">
+                                    <a href="/gpudb/b3073/asus-gtx-980.html">ASUS GTX 980</a>
+                                </td>
+                                <td title="unchanged" class="unchanged" data-sort="1127">1127 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td data-sort="ASUS STRIX GTX 980 DirectCU II OC">
+                                    <a href="/gpudb/b3072/asus-strix-gtx-980-directcu-ii-oc.html">ASUS STRIX GTX 980 DirectCU II OC</a>
+                                </td>
+                                <td data-sort="1178">1178 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1279 MHz, 11.36 inches</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="ASUS ROG Matrix GTX 980 Platinum">
+                                    <a href="/gpudb/b3152/asus-rog-matrix-gtx-980-platinum.html">ASUS ROG Matrix GTX 980 Platinum</a>
+                                </td>
+                                <td data-sort="1241">1241 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1342 MHz</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="ASUS ROG POSEIDON GTX 980 Platinum">
+                                    <a href="/gpudb/b3147/asus-rog-poseidon-gtx-980-platinum.html">ASUS ROG POSEIDON GTX 980 Platinum</a>
+                                </td>
+                                <td data-sort="1178">1178 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1279 MHz, 11.3 inches</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="Colorful iGame GTX 980">
+                                    <a href="/gpudb/b3107/colorful-igame-gtx-980.html">Colorful iGame GTX 980</a>
+                                </td>
+                                <td title="unchanged" class="unchanged" data-sort="1127">1127 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td data-sort="ELSA GTX 980">
+                                    <a href="/gpudb/b3105/elsa-gtx-980.html">ELSA GTX 980</a>
+                                </td>
+                                <td title="unchanged" class="unchanged" data-sort="1127">1127 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td data-sort="ELSA GTX 980 S.A.C">
+                                    <a href="/gpudb/b3134/elsa-gtx-980-s-a-c.html">ELSA GTX 980 S.A.C</a>
+                                </td>
+                                <td data-sort="1152">1152 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1253 MHz, 10.51 inches</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="EVGA GTX 980">
+                                    <a href="/gpudb/b3061/evga-gtx-980.html">EVGA GTX 980</a>
+                                </td>
+                                <td title="unchanged" class="unchanged" data-sort="1127">1127 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td data-sort="EVGA GTX 980 ACX 2.0">
+                                    <a href="/gpudb/b3086/evga-gtx-980-acx-2-0.html">EVGA GTX 980 ACX 2.0</a>
+                                </td>
+                                <td title="unchanged" class="unchanged" data-sort="1127">1127 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td data-sort="EVGA GTX 980 Classified ACX 2.0">
+                                    <a href="/gpudb/b3088/evga-gtx-980-classified-acx-2-0.html">EVGA GTX 980 Classified ACX 2.0</a>
+                                </td>
+                                <td data-sort="1291">1291 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1393 MHz, 2x DVI 1x HDMI 1x DisplayPort</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="EVGA GTX 980 FTW ACX 2.0">
+                                    <a href="/gpudb/b3087/evga-gtx-980-ftw-acx-2-0.html">EVGA GTX 980 FTW ACX 2.0</a>
+                                </td>
+                                <td data-sort="1279">1279 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1380 MHz, 2x DVI 1x HDMI 1x DisplayPort</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="EVGA GTX 980 Hydro Copper">
+                                    <a href="/gpudb/b3089/evga-gtx-980-hydro-copper.html">EVGA GTX 980 Hydro Copper</a>
+                                </td>
+                                <td data-sort="1291">1291 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1393 MHz</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="EVGA GTX 980 Superclocked">
+                                    <a href="/gpudb/b3060/evga-gtx-980-superclocked.html">EVGA GTX 980 Superclocked</a>
+                                </td>
+                                <td data-sort="1241">1241 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1342 MHz</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="EVGA GTX 980 Superclocked ACX 2.0">
+                                    <a href="/gpudb/b3062/evga-gtx-980-superclocked-acx-2-0.html">EVGA GTX 980 Superclocked ACX 2.0</a>
+                                </td>
+                                <td data-sort="1266">1266 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1367 MHz</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="Gainward GTX 980">
+                                    <a href="/gpudb/b3074/gainward-gtx-980.html">Gainward GTX 980</a>
+                                </td>
+                                <td title="unchanged" class="unchanged" data-sort="1127">1127 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td data-sort="Gainward GTX 980">
+                                    <a href="/gpudb/b3131/gainward-gtx-980.html">Gainward GTX 980</a>
+                                </td>
+                                <td title="unchanged" class="unchanged" data-sort="1127">1127 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>11.024 inches</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="Gainward GTX 980 Guan Yu">
+                                    <a href="/gpudb/b3138/gainward-gtx-980-guan-yu.html">Gainward GTX 980 Guan Yu</a>
+                                </td>
+                                <td data-sort="1202">1202 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1304 MHz</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="Gainward GTX 980 Phantom">
+                                    <a href="/gpudb/b3132/gainward-gtx-980-phantom.html">Gainward GTX 980 Phantom</a>
+                                </td>
+                                <td data-sort="1203">1203 MHz</td>
+                                <td data-sort="1800">1800 MHz</td>
+                                <td>Boost Clock: 1304 MHz, 10.78 inches</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="GALAX GTX 980 HOF">
+                                    <a href="/gpudb/b3140/galax-gtx-980-hof.html">GALAX GTX 980 HOF</a>
+                                </td>
+                                <td data-sort="1304">1304 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1418 MHz, 12.13 inches</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="GALAX GTX 980 SOC">
+                                    <a href="/gpudb/b3108/galax-gtx-980-soc.html">GALAX GTX 980 SOC</a>
+                                </td>
+                                <td data-sort="1228">1228 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1329 MHz, 11.06 inches</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="GIGABYTE GTX 980">
+                                    <a href="/gpudb/b3122/gigabyte-gtx-980.html">GIGABYTE GTX 980</a>
+                                </td>
+                                <td title="unchanged" class="unchanged" data-sort="1127">1127 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td data-sort="GIGABYTE GTX 980 G1 Gaming">
+                                    <a href="/gpudb/b3071/gigabyte-gtx-980-g1-gaming.html">GIGABYTE GTX 980 G1 Gaming</a>
+                                </td>
+                                <td data-sort="1228">1228 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1329 MHz, 12.28 inches, 2x DVI 1x HDMI 3x DisplayPort</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="GIGABYTE GTX 980 WindForce 3X OC">
+                                    <a href="/gpudb/b3123/gigabyte-gtx-980-windforce-3x-oc.html">GIGABYTE GTX 980 WindForce 3X OC</a>
+                                </td>
+                                <td data-sort="1178">1178 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1279 MHz, 12.28 inches</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="Inno3D GTX 980">
+                                    <a href="/gpudb/b3079/inno3d-gtx-980.html">Inno3D GTX 980</a>
+                                </td>
+                                <td title="unchanged" class="unchanged" data-sort="1127">1127 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td data-sort="Inno3D GTX 980 HerculeZ X3 OC">
+                                    <a href="/gpudb/b3104/inno3d-gtx-980-herculez-x3-oc.html">Inno3D GTX 980 HerculeZ X3 OC</a>
+                                </td>
+                                <td data-sort="1152">1152 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1253 MHz, 10.47 inches</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="Inno3D iChill GTX 980 HerculeZ X4 Air Boss">
+                                    <a href="/gpudb/b3099/inno3d-ichill-gtx-980-herculez-x4-air-boss.html">Inno3D iChill GTX 980 HerculeZ X4 Air Boss</a>
+                                </td>
+                                <td data-sort="1228">1228 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1329 MHz, 11.81 inches</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="Inno3D iChill GTX 980 HerculeZ X4 Air Boss Ultra">
+                                    <a href="/gpudb/b3100/inno3d-ichill-gtx-980-herculez-x4-air-boss-ultra.html">Inno3D iChill GTX 980 HerculeZ X4 Air Boss Ultra</a>
+                                </td>
+                                <td data-sort="1266">1266 MHz</td>
+                                <td data-sort="1800">1800 MHz</td>
+                                <td>Boost Clock: 1367 MHz, 11.81 inches</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="Leadtek WinFast GTX 980">
+                                    <a href="/gpudb/b3141/leadtek-winfast-gtx-980.html">Leadtek WinFast GTX 980</a>
+                                </td>
+                                <td title="unchanged" class="unchanged" data-sort="1127">1127 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td data-sort="Leadtek WinFast GTX 980 Hurricane">
+                                    <a href="/gpudb/b3129/leadtek-winfast-gtx-980-hurricane.html">Leadtek WinFast GTX 980 Hurricane</a>
+                                </td>
+                                <td data-sort="1152">1152 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1253 MHz, 11.65 inches</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="MSI GTX 980">
+                                    <a href="/gpudb/b3075/msi-gtx-980.html">MSI GTX 980</a>
+                                </td>
+                                <td title="unchanged" class="unchanged" data-sort="1127">1127 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td data-sort="MSI GTX 980 Gaming">
+                                    <a href="/gpudb/b3076/msi-gtx-980-gaming.html">MSI GTX 980 Gaming</a>
+                                </td>
+                                <td data-sort="1216">1216 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1317 MHz</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="MSI GTX 980 OCV1">
+                                    <a href="/gpudb/b3056/msi-gtx-980-ocv1.html">MSI GTX 980 OCV1</a>
+                                </td>
+                                <td data-sort="1152">1152 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1252 MHz</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="Palit GTX 980">
+                                    <a href="/gpudb/b3078/palit-gtx-980.html">Palit GTX 980</a>
+                                </td>
+                                <td title="unchanged" class="unchanged" data-sort="1127">1127 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td data-sort="Palit GTX 980 JetStream">
+                                    <a href="/gpudb/b3125/palit-gtx-980-jetstream.html">Palit GTX 980 JetStream</a>
+                                </td>
+                                <td title="unchanged" class="unchanged" data-sort="1127">1127 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>11.024 inches, 1x DVI 1x mini-HDMI 3x mini-DisplayPort</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="Palit GTX 980 Super JetStream">
+                                    <a href="/gpudb/b3124/palit-gtx-980-super-jetstream.html">Palit GTX 980 Super JetStream</a>
+                                </td>
+                                <td data-sort="1203">1203 MHz</td>
+                                <td data-sort="1800">1800 MHz</td>
+                                <td>Boost Clock: 1304 MHz, 11.024 inches, 1x DVI 1x mini-HDMI 3x mini-DisplayPort</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="PNY GTX 980">
+                                    <a href="/gpudb/b3080/pny-gtx-980.html">PNY GTX 980</a>
+                                </td>
+                                <td title="unchanged" class="unchanged" data-sort="1127">1127 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td data-sort="ZOTAC GTX 980">
+                                    <a href="/gpudb/b3081/zotac-gtx-980.html">ZOTAC GTX 980</a>
+                                </td>
+                                <td title="unchanged" class="unchanged" data-sort="1127">1127 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td data-sort="ZOTAC GTX 980 AMP! Edition">
+                                    <a href="/gpudb/b3126/zotac-gtx-980-amp-edition.html">ZOTAC GTX 980 AMP! Edition</a>
+                                </td>
+                                <td data-sort="1165">1165 MHz</td>
+                                <td title="unchanged" class="unchanged" data-sort="1753">1753 MHz</td>
+                                <td>Boost Clock: 1266 MHz</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="ZOTAC GTX 980 AMP! Extreme Edition">
+                                    <a href="/gpudb/b3083/zotac-gtx-980-amp-extreme-edition.html">ZOTAC GTX 980 AMP! Extreme Edition</a>
+                                </td>
+                                <td data-sort="1291">1291 MHz</td>
+                                <td data-sort="1800">1800 MHz</td>
+                                <td>Boost Clock: 1393 MHz</td>
+                            </tr>
+                            <tr>
+                                <td data-sort="ZOTAC GTX 980 AMP! Omega Edition">
+                                    <a href="/gpudb/b3082/zotac-gtx-980-amp-omega-edition.html">ZOTAC GTX 980 AMP! Omega Edition</a>
+                                </td>
+                                <td data-sort="1202">1202 MHz</td>
+                                <td data-sort="1762">1762 MHz</td>
+                                <td>Boost Clock: 1304 MHz</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <script class="masonry-brick" style="left: 0px; top: 1739px; position: absolute;">
+                    jQuery.fn.sortElements = (function() {
+                        var sort = [].sort;
+                        return function(comparator, getSortable) {
+                            getSortable = getSortable || function() {
+                                return this;
+                            };
+                            var placements = this.map(function() {
+                                var sortElement = getSortable.call(this),
+                                    parentNode = sortElement.parentNode,
+                                    // Since the element itself will change position, we have
+                                    // to have some way of storing it's original position in
+                                    // the DOM. The easiest way is to have a 'flag' node:
+                                    nextSibling = parentNode.insertBefore(
+                                        document.createTextNode(''),
+                                        sortElement.nextSibling
+                                    );
+
+                                return function() {
+                                    if (parentNode === this) {
+                                        throw new Error(
+                                            "You can't sort elements if any one is a descendant of another."
+                                        );
+                                    }
+                                    // Insert before flag:
+                                    parentNode.insertBefore(this, nextSibling);
+                                    // Remove flag:
+                                    parentNode.removeChild(nextSibling);
+                                };
+                            });
+                            return sort.call(this, comparator).each(function(i) {
+                                placements[i].call(getSortable.call(this));
+                            });
+                        };
+                    })();
+
+                    function resort(idx, inverse) {
+                        $('.customboards').find('td').filter(function() {
+                            return $(this).index() == idx;
+                        }).sortElements(function(a, b) {
+
+                            if ($(a).data('sort') == $(b).data('sort'))
+                                return 0;
+
+                            return $(a).data('sort') > $(b).data('sort') ? inverse ? -1 : 1 : inverse ? 1 : -1;
+                        }, function() {
+                            return this.parentNode;
+                        });
+                    }
+
+                    $(document).ready(function(e) {
+                        $('.customboards th').eq(0).css('cursor', 'pointer').click(function(e) {
+                            $('.customboards th').css('background-color', '');
+                            $(this).css('background-color', '#f3f3f3');
+                            resort(0, false);
+                        });
+                        $('.customboards th').eq(1).css('cursor', 'pointer').click(function(e) {
+                            $('.customboards th').css('background-color', '');
+                            $(this).css('background-color', '#f3f3f3');
+                            resort(1, true);
+                        });
+                        $('.customboards th').eq(2).css('cursor', 'pointer').click(function(e) {
+                            $('.customboards th').css('background-color', '');
+                            $(this).css('background-color', '#f3f3f3');
+                            resort(2, true);
+                        });
+                    });
+                </script>
+
+            </div>
+
+        </li>-->
+    </body>
+
+</html>

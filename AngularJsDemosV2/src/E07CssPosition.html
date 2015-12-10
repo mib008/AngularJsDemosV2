@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+    <style>
+        .square {
+            height: 100px;
+            width: 100px;
+        }
+
+
+        .deep1 {
+            background: red;
+            left: 50px;
+            top: 50px;
+            -ms-opacity: 0.5;
+            opacity: 0.5;
+        }
+
+        .deep2 {
+            background: blue;
+            left: 100px;
+            top: 100px;
+            -ms-opacity: 0.5;
+            opacity: 0.5;
+        }
+    </style>
+
+    <title></title>
+</head>
+<body>
+    <div class="deep1 square" style="position: relative">
+        <div class="deep2 square"  style="position: relative"></div>
+    </div>
+
+    <div style="position: absolute; width: 50px; height: 2px; top: 0; left: 0; background: black;"></div>
+    <div style="position: absolute; width: 100px; height: 2px; top: 10px; left: 0; background: black;"></div>
+</body>
+</html>

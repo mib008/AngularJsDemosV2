@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <script data-main="js/A01.js" src="libs/require.js"></script>
+
+    <title></title>
+</head>
+<body>
+    Your name:
+    <input type="text" ng-model="yourname" placeholder="World">
+    <hr> Hello {{yourname || 'World'}} !
+</body>
+</html>

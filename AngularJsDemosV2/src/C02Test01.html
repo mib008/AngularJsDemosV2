@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app>
+
+	<head>
+		<script src="http://cdn.bootcss.com/angular.js/1.1.0/angular.min.js"></script>
+
+		<script src="Scripts/B01Controllers.js"></script>
+
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<ul ng-controller="FontSizesList">
+			<li style="font-size: 10px;">AAA</li>
+			<li style="font-size: 15px;">AAA</li>
+			<li style="font-size: 20px;">AAA</li>
+			<li style="font-size: 25px;">AAA</li>
+
+			<li ng-repeat="si in sizes" style="font-size: {{si.size}};">AAA + {{si.size}}
+			</li>
+		</ul>
+
+		<ul>
+			Version 003
+		</ul>
+	</body>
+
+</html>

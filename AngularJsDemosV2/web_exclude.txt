@@ -1,0 +1,10 @@
+.cs
+.vb
+.pdb
+.csproj
+.csproj.user
+.Publish.xml
+.___
+.cmd
+.rar
+\js\

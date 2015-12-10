@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html ng-app xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        body {
+            font-family: Verdana,sans-serif;
+            font-size: 0.8em;
+        }
+
+        .draggable-article {
+            width: 250px;
+            float: left;
+            margin: 10px;
+            padding: 0px;
+        }
+
+        .draggable-article-header {
+            background: black;
+            color: white;
+            margin: 0px;
+            padding: 5px;
+        }
+
+        .draggable-article-content {
+            padding: 5px;
+        }
+
+        div#header, div#footer, div#content, div#post {
+            border: 1px solid grey;
+            margin: 5px;
+            margin-bottom: 15px;
+            padding: 8px;
+            background-color: white;
+        }
+
+        div#header, div#footer {
+            color: white;
+            background-color: #444;
+            margin-bottom: 5px;
+        }
+
+        div#content {
+            background-color: #ddd;
+            overflow: auto;
+        }
+
+        div#menu ul {
+            margin: 0;
+            padding: 0;
+        }
+
+            div#menu ul li {
+                display: inline;
+                margin: 5px;
+            }
+
+        div#logger-div {
+            overflow: auto;
+        }
+
+        div#logger-label {
+            width: auto;
+            display: inline;
+            float: left;
+            margin: 0px 5px 0px 0px;
+        }
+
+        div#logger-textarea {
+            display: inline;
+            float: left;
+            width: auto;
+        }
+
+        header, footer, section, article {
+            border: 1px solid grey;
+            margin: 5px;
+            margin-bottom: 15px;
+            padding: 8px;
+            background-color: white;
+        }
+
+        header, footer {
+            color: white;
+            background-color: #444;
+            margin-bottom: 5px;
+        }
+
+        section {
+            background-color: #ddd;
+            overflow: auto;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+        }
+
+            nav ul li {
+                display: inline;
+                margin: 5px;
+            }
+
+        .draggable-article {
+        }
+    </style>
+
+
+    <script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.10.1.min.js"></script>
+    <script src="http://cdn.bootcss.com/angular.js/1.1.0/angular.min.js"></script>
+
+    <title></title>
+</head>
+<body>
+
+    <header>
+        <h1>What Does WWF Do?</h1>
+        <p>WWF's mission: Version002</p>
+        <br />
+        <div id="logger-div">
+            <div id="logger-label">
+                <p>Logger:</p>
+            </div>
+
+            <div id="logger-textarea">
+                <p>
+                    WWF's mission is to stop the degradation of our planet's natural environment,
+                    and build a future in which humans live in harmony with nature.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="/html/">HTML</a> |
+        <a href="/css/">CSS</a> |
+        <a href="/js/">JavaScript</a> |
+        <a href="/jquery/">jQuery</a>
+    </nav>
+
+    <section>
+        <article class="draggable-article">
+            <p class="draggable-article-header">Grid 0</p>
+            <p class="draggable-article-content">
+                WWF's mission is to stop the degradation of our planet's natural environment,
+                and build a future in which humans live in harmony with nature.
+            </p>
+        </article>
+
+        <article class="draggable-article">
+            <p class="draggable-article-header">Grid 1</p>
+            <p class="draggable-article-content">
+                WWF's mission is to stop the degradation of our planet's natural environment,
+                and build a future in which humans live in harmony with nature.
+            </p>
+        </article>
+
+        <article class="draggable-article">
+            <p class="draggable-article-header">Grid 2</p>
+            <p class="draggable-article-content">
+                WWF's mission is to stop the degradation of our planet's natural environment,
+                and build a future in which humans live in harmony with nature.
+            </p>
+        </article>
+
+        <p style="clear: both;">My family and I visited The Epcot center this summer.</p>
+
+    </section>
+
+    <aside>
+        <h4>Epcot Center</h4>
+        <p>The Epcot Center is a theme park in Disney World, Florida.</p>
+    </aside>
+
+    <figure>
+        <img src="Images/mainBtn03.png" alt="The Pulpit Rock">
+        <figcaption>Fig1. - The Pulpit Rock, Norway.</figcaption>
+    </figure>
+
+    <footer>
+        <p>Posted by: Hege Refsnes</p>
+        <p>
+            Contact information: <a href="mailto:someone@example.com">
+                someone@example.com
+            </a>.
+        </p>
+        <input id="input-loggerString" ng-model="loggerString" type="text" style="display: block;" />
+    </footer>
+
+    <script type="text/javascript">
+
+        $(".draggable-article-header").each(
+            function() {
+                $(this).attr('draggable', 'true');
+
+                $(this).on('mousedown',
+                    function () {
+                        appendLogger("Call .draggable-article-header mousedown.");
+                    }
+                );
+            }
+        );
+
+        $(".draggable-article").each(
+            function () {
+                //// mousedown Event
+                //$(this).mousedown(
+                //    function () {
+                //        var message;
+
+                //        $(".draggable-article").each(
+                //            function () {
+                //                if (message) {
+                //                    message = message + "<br/>" +
+                //                    "--- left:" + this.offsetLeft +
+                //                    " top:" + this.offsetTop +
+                //                    " width:" + this.offsetWidth +
+                //                    " height:" + this.offsetHeight;
+                //                } else {
+                //                    message = "<br/>--- left:" + this.offsetLeft +
+                //                    " top:" + this.offsetTop +
+                //                    " width:" + this.offsetWidth +
+                //                    " height:" + this.offsetHeight;
+                //                }
+                //            }
+                //        );
+
+
+
+                //        // appendLogger("Call .draggable-article mouseDown " + message);
+                //    }
+                //);
+
+                // ondragstart Event
+                $(this).on('dragstart', function (evt) {
+                    appendLogger("Call .draggable-article dragstart.");
+                });
+
+
+            }
+        );
+
+        function B05Control($scope) {
+            $scope.loggerString = "String.Empty";
+        }
+
+        function appendLogger(message) {
+            //var loggerTag = $("#logger-textarea");
+            //if (loggerTag && loggerTag[0]) {
+            //    if (loggerTag[0].childElementCount >= 5) {
+            //        loggerTag[0].children[0].parentNode.removeChild(loggerTag[0].children[0]);
+            //    }
+
+            //    loggerTag.append("<p>" + message + "\t" + new Date() + "</p>");
+            //}
+
+            console.log(message + "\t" + new Date());
+        }
+
+    </script>
+
+
+</body>
+</html>

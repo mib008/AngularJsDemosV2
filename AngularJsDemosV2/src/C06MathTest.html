@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.10.1.min.js"></script>
+        <title></title>
+    </head>
+<body>
+    <input id="output"/>
+    
+    <div id="CheckBoxPanel">
+        <input id="1" type="checkbox" onclick="Checked()" />
+        <input id="2" type="checkbox" onclick="Checked()" />
+        <input id="4" type="checkbox" onclick="Checked()" />
+        <input id="8" type="checkbox" onclick="Checked()" />
+        <input id="16" type="checkbox" onclick="Checked()" />
+    </div>
+    
+    <button>Button</button>
+    
+    <script>
+        $("input#output").val(0);
+
+        function Checked() {
+            var total = 0;
+
+            $("div#CheckBoxPanel input[type='checkbox']").each(function () {
+                var value = parseInt($(this).attr("id"));
+                    //$(this).attr("checked")
+                if ($(this)[0].checked) {
+                    console.log("Checkbox: " + value + " checked." + $(this).val() + "..." + total + " + " + value);
+
+                    total = total + value;
+                } 
+            });
+
+            $("input#output").val(total);
+        }
+    </script>
+</body>
+</html>

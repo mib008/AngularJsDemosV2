@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app>
+
+	<head>
+		<script src="http://cdn.bootcss.com/angular.js/1.1.0/angular.min.js"></script>
+
+		<script src="Scripts/B01Controllers.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="Css/Styles.css">
+
+		<meta charset="utf-8">
+
+		<title>Phone List Controllers Iterator And Filter</title>
+	</head>
+
+	<body style="background-color: #FFFFFF;" >
+		<div ng-controller="GeforceGraphicCardCtrl">
+			<ul style="padding-top: 20px;">
+				<p style="font-size:large;">Search:
+					<input ng-model="query">
+				</p>
+				<p style="font-size:large">Filter: {{query}}</p>
+				<br />
+
+				<table class="infoTable">
+					<tbody>
+						<tr>
+							<th>GPU</th>
+							<th>GPU Variant</th>
+							<th>Shading Units</th>
+						</tr>
+						<tr ng-repeat="videoCard in videoCards | filter:query">
+							<td>{{videoCard.gpu}}</td>
+							<td>{{videoCard.gpuVariant}}</td>
+							<td>{{videoCard.shadingUnits}}</td>
+						</tr>
+					</tbody>
+				</table>
+				
+			</ul>
+		</div>
+	</body>
+
+</html>
