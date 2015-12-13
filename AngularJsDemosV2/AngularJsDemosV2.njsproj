@@ -45,6 +45,7 @@
     <Content Include="release.setting.json" />
     <Content Include="src\A01HelloWorld.html" />
     <Content Include="src\B10RouteLocation.html" />
+    <Content Include="src\E06JavaScriptBase.html" />
     <Content Include="src\E07CssPosition.html" />
     <Content Include="src\images\01.jpg" />
     <Content Include="src\index.html" />
