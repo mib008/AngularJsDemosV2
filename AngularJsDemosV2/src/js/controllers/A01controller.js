@@ -1,9 +1,9 @@
 ﻿define(['angular'], function (angular) {
     "use strict";
 
-    var controllerModule = angular.module('controllers', []);
+    var controllerModule = angular.module('A01Controller', []);
     
-    controllerModule.controller('A01controller', ['$scope', '$http', function ($scope, $http) {
+    controllerModule.controller('A01Controller', ['$scope', '$http', function ($scope, $http) {
             
             //$http.get('../datas/dataChs.json').success(
             //    function (data) {

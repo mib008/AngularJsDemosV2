@@ -34,10 +34,12 @@
     <Compile Include="routes.js" />
     <Compile Include="server.js" />
     <Compile Include="service_middleware\index_menu_service.js" />
+    <Compile Include="src\js\controllers\E01Controller.js" />
     <Compile Include="src\controllers\indexController.js" />
+    <Compile Include="src\js\E01.js" />
     <Compile Include="src\js\index.js" />
     <Compile Include="src\js\A01.js" />
-    <Compile Include="src\js\controllers\A01controller.js" />
+    <Compile Include="src\js\controllers\A01Controller.js" />
     <Compile Include="src\js\JavaScript.js" />
     <Compile Include="src\libs\domReady.js" />
     <Compile Include="src\libs\require.js" />
@@ -45,6 +47,7 @@
     <Content Include="release.setting.json" />
     <Content Include="src\A01HelloWorld.html" />
     <Content Include="src\B10RouteLocation.html" />
+    <Content Include="src\E01ECMAScriptBase.html" />
     <Content Include="src\E06JavaScriptBase.html" />
     <Content Include="src\E07CssPosition.html" />
     <Content Include="src\images\01.jpg" />

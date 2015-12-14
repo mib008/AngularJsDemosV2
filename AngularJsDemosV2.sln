@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "AngularJsDemosV2", "AngularJsDemosV2\AngularJsDemosV2.njsproj", "{F8B726E9-9E5B-4E6A-B058-A31F84605A23}"
 EndProject
