@@ -40,10 +40,8 @@
         
         next();
     }
-    
-    return {
-        middleware: middleware
-    };
+
+    return middleware;
 };
 
 module.exports = index_menu_service;

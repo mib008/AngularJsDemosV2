@@ -11,14 +11,13 @@
     }
 });
 
-require(['angular', 'domReady', 'controllers/A01controller'], function (angular, domReady, A01controller) {
+require(['angular', 'domReady', 'controllers/E01Controller'], function (angular, domReady, E01Controller) {
     'use strict';
     
     
     domReady(function () {
-        // angular.module('A01', ['controllers']);    
-        angular.module('A01', []);
-
-        angular.bootstrap(document, ['A01']);
+        angular.module('E01', ['E01Controller']);
+        
+        angular.bootstrap(document, ['E01']);
     });
 });

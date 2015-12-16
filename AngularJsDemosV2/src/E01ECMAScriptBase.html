@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script data-main="js/E01.js" src="libs/require.js"></script>
+
+    <title></title>
+</head>
+<body ng-controller="E01Controller">
+
+<span>{{title}}</span>
+    <br />
+
+<button ng-click="testFunc()">Test Button</button>
+
+<!--<br/>
+<button onclick="callEs5Function('0')">es5Functions</button>
+<button onclick="callEs6Function('0')">es6Functions</button>
+
+<br/>
+<button onclick="callEs5Function('1')">es5Functions</button>
+<button onclick="callEs6Function('1')">es6Functions</button>
+
+<br/>
+<button onclick="callEs5Function('2')">es5Functions</button>
+<button onclick="callEs6Function('2')">es6Functions</button>-->
+
+<Section ng-repeat="func in funcs">
+    <span>{{$index}}</span>
+    <button ng-click="func.es5Command()">es5Functions</button>
+    <button ng-click="func.es6Command()">es6Functions</button>
+</Section>
+
+<script>
+    
+</script>
+</body>
+</html>

@@ -35,7 +35,7 @@
     <Compile Include="server.js" />
     <Compile Include="service_middleware\index_menu_service.js" />
     <Compile Include="src\js\controllers\E01Controller.js" />
-    <Compile Include="src\controllers\indexController.js" />
+    <Compile Include="src\js\controllers\indexController.js" />
     <Compile Include="src\js\E01.js" />
     <Compile Include="src\js\index.js" />
     <Compile Include="src\js\A01.js" />
@@ -61,9 +61,9 @@
     <Folder Include="service_middleware\" />
     <Folder Include="src\" />
     <Folder Include="src\areas\NewFolder1\" />
-    <Folder Include="src\controllers\" />
     <Folder Include="src\images\" />
     <Folder Include="src\js\controllers\" />
+    <Folder Include="src\js\services\" />
     <Folder Include="src\libs\" />
     <Folder Include="src\js\" />
     <Folder Include="src\areas\" />

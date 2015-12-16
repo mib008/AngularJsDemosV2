@@ -1,5 +1,5 @@
 ﻿require.config({
-    baseUrl: ".",
+    baseUrl: "js",
     paths: {
         angular: "../libs/angular/angular",
         domReady: "../libs/domReady"

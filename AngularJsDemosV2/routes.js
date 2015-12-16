@@ -27,7 +27,7 @@ function routes(router, basePath) {
     
 
     // Regist services
-    router.get("/service/index_menu_service", require('./service_middleware/index_menu_service')(basePath).middleware);
+    router.get("/service/index_menu_service", require('./service_middleware/index_menu_service')(basePath));
     
     // will handle any request that ends in /events
     // depends on where the router is "use()'d"
