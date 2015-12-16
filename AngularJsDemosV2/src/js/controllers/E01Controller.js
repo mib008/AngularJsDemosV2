@@ -78,7 +78,6 @@
             s.delete("2");
             result.push(s.has("2")); // false
             
-            
             return result;
         });
         
@@ -106,7 +105,7 @@
             var funcs = temp.command;
             
             for (var i = 0; i < $scope.funcs.length; i++) {
-                var item = {};
+                var item = $scope.funcs[i];
                 
                 item.index = i;
                 
@@ -114,17 +113,16 @@
                 //item.es6Command = funcs.es6Functions[i];
                 
                 let index = i;
-                
+
+                item.es5Content = funcs.es5Functions[i].toString();
                 item.es5Command = function () {
                     alert(funcs.es5Functions[index]());
                 };
                 
-                
+                item.es6Content = funcs.es6Functions[i].toString();
                 item.es6Command = function () {
                     alert(funcs.es6Functions[index]());
                 };
-                
-                $scope.funcs.push(item);
             }
 
 

@@ -28,8 +28,8 @@
 
 <Section ng-repeat="func in funcs">
     <span>{{$index}}</span>
-    <button ng-click="func.es5Command()">es5Functions</button>
-    <button ng-click="func.es6Command()">es6Functions</button>
+    <button ng-click="func.es5Command()" title="{{func.es5Content}}">es5Functions</button>
+    <button ng-click="func.es6Command()" title="{{func.es6Content}}">es6Functions</button>
 </Section>
 
 <script>
