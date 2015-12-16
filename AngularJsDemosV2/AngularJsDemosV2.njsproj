@@ -47,6 +47,7 @@
     <Content Include="release.setting.json" />
     <Content Include="src\A01HelloWorld.html" />
     <Content Include="src\B10RouteLocation.html" />
+    <Content Include="src\C07EventBubbling.html" />
     <Content Include="src\E01ECMAScriptBase.html" />
     <Content Include="src\E06JavaScriptBase.html" />
     <Content Include="src\E07CssPosition.html" />
