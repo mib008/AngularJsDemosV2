@@ -9,31 +9,40 @@
 </head>
 <body ng-controller="E01Controller">
 
-<span>{{title}}</span>
+    <span>{{title}}</span>
     <br />
 
-<button ng-click="testFunc()">Test Button</button>
+    <button ng-click="testFunc()">Test Button</button>
 
-<!--<br/>
-<button onclick="callEs5Function('0')">es5Functions</button>
-<button onclick="callEs6Function('0')">es6Functions</button>
+    <!--<br/>
+    <button onclick="callEs5Function('0')">es5Functions</button>
+    <button onclick="callEs6Function('0')">es6Functions</button>
 
-<br/>
-<button onclick="callEs5Function('1')">es5Functions</button>
-<button onclick="callEs6Function('1')">es6Functions</button>
+    <br/>
+    <button onclick="callEs5Function('1')">es5Functions</button>
+    <button onclick="callEs6Function('1')">es6Functions</button>
 
-<br/>
-<button onclick="callEs5Function('2')">es5Functions</button>
-<button onclick="callEs6Function('2')">es6Functions</button>-->
+    <br/>
+    <button onclick="callEs5Function('2')">es5Functions</button>
+    <button onclick="callEs6Function('2')">es6Functions</button>-->
 
-<Section ng-repeat="func in funcs">
-    <span>{{$index}}</span>
-    <button ng-click="func.es5Command()" title="{{func.es5Content}}">es5Functions</button>
-    <button ng-click="func.es6Command()" title="{{func.es6Content}}">es6Functions</button>
-</Section>
+    <button onclick="text()">ECMAScript6 Text (let)</button>
+
+    <Section ng-repeat="func in funcs">
+        <span>{{$index}}</span>
+        <button ng-click="func.es5Command()" title="{{func.es5Content}}">es5Functions</button>
+        <button ng-click="func.es6Command()" title="{{func.es6Content}}">es6Functions</button>
+    </Section>
 
 <script>
-    
+    "use strict";
+
+    function text() {
+        let a = 10;
+        var b = 1;
+
+        alert("let a = " + a + " var b = " + b);
+    }
 </script>
 </body>
 </html>

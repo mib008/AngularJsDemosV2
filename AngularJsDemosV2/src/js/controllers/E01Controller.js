@@ -81,6 +81,54 @@
             return result;
         });
         
+        // 2 - Chapter 3.4
+        funcs.es5Functions.push(function () { });
+        
+        funcs.es6Functions.push(function () {
+            var m = new Map();
+            
+            var result = [];
+            
+            m.set("edition", 6);        // 键是字符串
+            m.set(262, "standard");     // 键是数值
+            m.set(undefined, "nah");    // 键是undefined
+            
+            var hello = function () { console.log("hello"); }
+            m.set(hello, "Hello ES6!"); // 键是函数
+            
+            result.push(m.has("edition"));     // true
+            result.push(m.has("years"));       // false
+            result.push(m.has(262));           // true
+            result.push(m.has(undefined));     // true
+            result.push(m.has(hello));         // true
+            
+            m.delete(undefined);
+            result.push(m.has(undefined));       // false
+            
+            result.push(m.get(hello));  // Hello ES6!
+            result.push(m.get("edition")); // 6
+            
+            return result;
+        });
+        
+        // 2 - Chapter 3.5
+        funcs.es5Functions.push(function () { });
+        
+        funcs.es6Functions.push(function () {
+            // Not support
+                //function add(...values) {
+                //    let sum = 0;
+            
+                //    for (var val of values) {
+                //      sum += val;
+                //   }
+            
+                //    return sum;
+                //}
+            
+                //return add(2, 5, 3); // 10
+        });
+        
         return {
             test: testButton,
             command: funcs
@@ -100,6 +148,8 @@
                 { es5Title: "3.1 let命令", es6Title: "3.1 let命令" },
                 { es5Title: "3.2 const命令", es6Title: "3.2 const命令" },
                 { es5Title: "3.3 Set数据结构", es6Title: "3.3 Set数据结构" },
+                { es5Title: "3.4 Map数据结构", es6Title: "3.4 Map数据结构" },
+                { es5Title: "3.5 rest（...）运算符", es6Title: "3.5 rest（...）运算符" },
             ];
             
             var funcs = temp.command;
@@ -111,9 +161,7 @@
                 
                 //item.es5Command = funcs.es5Functions[i];
                 //item.es6Command = funcs.es6Functions[i];
-                
-                let index = i;
-
+                const index = i;
                 item.es5Content = funcs.es5Functions[i].toString();
                 item.es5Command = function () {
                     alert(funcs.es5Functions[index]());
