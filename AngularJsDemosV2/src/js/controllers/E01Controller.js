@@ -56,7 +56,7 @@
             return JSON.stringify(result);
         });
         
-        // 2 - Chapter 3.3
+        // 2 - Chapter 3.3.1
         funcs.es5Functions.push(function () { });
         
         funcs.es6Functions.push(function () {
@@ -81,7 +81,23 @@
             return result;
         });
         
-        // 2 - Chapter 3.4
+        // 3 - Chapter 3.3.2
+        funcs.es5Functions.push(function () { });
+        
+        funcs.es6Functions.push(function () {
+            var result = [];
+
+            var s = new Set();
+
+            [2, 3, 5, 4, 5, 2, 2].map(x => s.add(x));
+            for (var i of s) {
+                result.push(i);
+            }
+
+            return result;
+        });
+        
+        // 4 - Chapter 3.4
         funcs.es5Functions.push(function () { });
         
         funcs.es6Functions.push(function () {
@@ -111,7 +127,7 @@
             return result;
         });
         
-        // 2 - Chapter 3.5
+        // 5 - Chapter 3.5
         funcs.es5Functions.push(function () { });
         
         funcs.es6Functions.push(function () {
@@ -147,7 +163,8 @@
             $scope.funcs = [
                 { es5Title: "3.1 let命令", es6Title: "3.1 let命令" },
                 { es5Title: "3.2 const命令", es6Title: "3.2 const命令" },
-                { es5Title: "3.3 Set数据结构", es6Title: "3.3 Set数据结构" },
+                { es5Title: "3.3.1 Set数据结构", es6Title: "3.3.1 Set数据结构" },
+                { es5Title: "3.3.2 Set数据结构", es6Title: "3.3.2 Set数据结构" },
                 { es5Title: "3.4 Map数据结构", es6Title: "3.4 Map数据结构" },
                 { es5Title: "3.5 rest（...）运算符", es6Title: "3.5 rest（...）运算符" },
             ];
