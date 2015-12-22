@@ -56,7 +56,7 @@
             return JSON.stringify(result);
         });
         
-        // 2 - Chapter 3.3
+          // 2 - Chapter 3.3
         funcs.es5Functions.push(function () { });
         
         funcs.es6Functions.push(function () {
@@ -115,18 +115,18 @@
         funcs.es5Functions.push(function () { });
         
         funcs.es6Functions.push(function () {
-            // Not support
-                //function add(...values) {
-                //    let sum = 0;
+            // Not support in IE
+                function add(...values) {
+                    let sum = 0;
             
-                //    for (var val of values) {
-                //      sum += val;
-                //   }
+                    for (var val of values) {
+                      sum += val;
+                   }
             
-                //    return sum;
-                //}
+                    return sum;
+                }
             
-                //return add(2, 5, 3); // 10
+                return add(2, 5, 3); // 10
         });
         
         return {
