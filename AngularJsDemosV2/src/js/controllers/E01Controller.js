@@ -56,7 +56,7 @@
             return JSON.stringify(result);
         });
         
-          // 2 - Chapter 3.3
+        // 2 - Chapter 3.3
         funcs.es5Functions.push(function () { });
         
         funcs.es6Functions.push(function () {
@@ -115,7 +115,7 @@
         funcs.es5Functions.push(function () { });
         
         funcs.es6Functions.push(function () {
-            // Not support in IE
+            // Not support
                 function add(...values) {
                     let sum = 0;
             

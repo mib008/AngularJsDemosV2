@@ -34,6 +34,8 @@
     <Compile Include="routes.js" />
     <Compile Include="server.js" />
     <Compile Include="service_middleware\index_menu_service.js" />
+    <Compile Include="src\js\B10.js" />
+    <Compile Include="src\js\controllers\B10Controller.js" />
     <Compile Include="src\js\controllers\E01Controller.js" />
     <Compile Include="src\js\controllers\indexController.js" />
     <Compile Include="src\js\E01.js" />
@@ -41,6 +43,10 @@
     <Compile Include="src\js\A01.js" />
     <Compile Include="src\js\controllers\A01Controller.js" />
     <Compile Include="src\js\JavaScript.js" />
+    <Compile Include="src\libs\angular-route\angular-route.js" />
+    <Compile Include="src\libs\angular-route\angular-route.min.js" />
+    <Compile Include="src\libs\angular\angular.js" />
+    <Compile Include="src\libs\angular\angular.min.js" />
     <Compile Include="src\libs\domReady.js" />
     <Compile Include="src\libs\require.js" />
     <Content Include="debug.setting.json" />
@@ -55,6 +61,18 @@
     <Content Include="src\index.html" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="src\libs\angular-route\.bower.json" />
+    <Content Include="src\libs\angular-route\angular-route.min.js.map" />
+    <Content Include="src\libs\angular-route\bower.json" />
+    <Content Include="src\libs\angular-route\package.json" />
+    <Content Include="src\libs\angular-route\README.md" />
+    <Content Include="src\libs\angular\.bower.json" />
+    <Content Include="src\libs\angular\angular-csp.css" />
+    <Content Include="src\libs\angular\angular.min.js.gzip" />
+    <Content Include="src\libs\angular\angular.min.js.map" />
+    <Content Include="src\libs\angular\bower.json" />
+    <Content Include="src\libs\angular\package.json" />
+    <Content Include="src\libs\angular\README.md" />
     <Content Include="src\views\B10\detail.html" />
     <Content Include="src\views\B10\list.html" />
   </ItemGroup>
@@ -68,6 +86,8 @@
     <Folder Include="src\libs\" />
     <Folder Include="src\js\" />
     <Folder Include="src\areas\" />
+    <Folder Include="src\libs\angular-route\" />
+    <Folder Include="src\libs\angular\" />
     <Folder Include="src\styles\" />
     <Folder Include="src\views\" />
     <Folder Include="mock\" />
