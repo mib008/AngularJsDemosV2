@@ -144,6 +144,60 @@
             
                 return add(2, 5, 3); // 10
         });
+
+        // 6 - Chapter 3.6
+        funcs.es5Functions.push(function() {
+            function makeIterator(array){
+                var nextIndex = 0;
+
+                return {
+                    next: function(){
+                        return nextIndex < array.length ?
+                            {value: array[nextIndex++], done: false} :
+                            {value: undefined, done: true};
+                        }
+                }
+            }
+
+            var it = makeIterator(['a', 'b']);
+
+            var result = [];
+
+            result.push(JSON.stringify(it.next()));  
+            result.push(JSON.stringify(it.next()));  
+            result.push(JSON.stringify(it.next()));  
+            result.push(JSON.stringify(it.next()));  
+            result.push(JSON.stringify(it.next()));
+
+            return result;
+        });
+
+        funcs.es6Functions.push(function() {
+            function makeIterator(array){
+                let nextIndex = 0;
+
+                return {
+                    [Symbol.iterator]() {
+                        return this;
+                    },
+                    next: function() {
+                        return nextIndex < array.length ?
+                            {value: array[nextIndex++], done: false} :
+                            {value: undefined, done: true};
+                        }
+                }
+            }
+
+            var iterator = makeIterator(['a', 'b', 'c', 'C', 'B', 'A']);
+
+            var result = [];
+
+            for (let item of iterator) {
+                result.push(JSON.stringify(item));
+            }
+
+            return result;
+        });
         
         return {
             test: testButton,
@@ -167,6 +221,7 @@
                 { es5Title: "3.3.2 Set数据结构", es6Title: "3.3.2 Set数据结构" },
                 { es5Title: "3.4 Map数据结构", es6Title: "3.4 Map数据结构" },
                 { es5Title: "3.5 rest（...）运算符", es6Title: "3.5 rest（...）运算符" },
+                { es5Title: "3.6 遍历器（Iterator）", es6Title: "3.6 遍历器（Iterator）" },
             ];
             
             var funcs = temp.command;
@@ -181,12 +236,22 @@
                 const index = i;
                 item.es5Content = funcs.es5Functions[i].toString();
                 item.es5Command = function () {
-                    alert(funcs.es5Functions[index]());
+                    // alert(funcs.es5Functions[index]());
+
+                    $scope.result = funcs.es5Functions[index]();
+                    if (!$scope.result) {
+                        $scope.result = "undefined";
+                    }
                 };
                 
                 item.es6Content = funcs.es6Functions[i].toString();
                 item.es6Command = function () {
-                    alert(funcs.es6Functions[index]());
+                    // alert(funcs.es6Functions[index]());
+
+                    $scope.result = funcs.es6Functions[index]();
+                    if (!$scope.result) {
+                        $scope.result = "undefined";
+                    }
                 };
             }
 
