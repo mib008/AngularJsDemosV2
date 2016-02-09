@@ -28,21 +28,27 @@
 
     <button onclick="text()">ECMAScript6 Text (let)</button>
 
+    <br />
+
+    <div>Result:<span>{{result}}</span></div>
+
+    <br />
+
     <Section ng-repeat="func in funcs">
         <span>{{$index}}</span>
-        <button ng-click="func.es5Command()" title="{{func.es5Content}}">es5Functions</button>
-        <button ng-click="func.es6Command()" title="{{func.es6Content}}">es6Functions</button>
+        <button ng-click="func.es5Command()" title="{{func.es5Content}}">{{func.es5Title}}</button>
+        <button ng-click="func.es6Command()" title="{{func.es6Content}}">{{func.es6Title}}</button>
     </Section>
 
-<script>
-    "use strict";
+    <script>
+        "use strict";
 
-    function text() {
-        let a = 10;
-        var b = 1;
+        function text() {
+            let a = 10;
+            var b = 1;
 
-        alert("let a = " + a + " var b = " + b);
-    }
-</script>
+            alert("let a = " + a + " var b = " + b);
+        }
+    </script>
 </body>
 </html>
