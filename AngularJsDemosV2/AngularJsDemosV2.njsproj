@@ -39,6 +39,8 @@
     <Compile Include="src\js\controllers\E01Controller.js" />
     <Compile Include="src\js\controllers\indexController.js" />
     <Compile Include="src\js\E01.js" />
+    <Compile Include="src\js\E02\Guid.js" />
+    <Compile Include="src\js\E02\Sync2.js" />
     <Compile Include="src\js\index.js" />
     <Compile Include="src\js\A01.js" />
     <Compile Include="src\js\controllers\A01Controller.js" />
@@ -55,6 +57,7 @@
     <Content Include="src\B10RouteLocation.html" />
     <Content Include="src\C07EventBubbling.html" />
     <Content Include="src\E01ECMAScriptBase.html" />
+    <Content Include="src\E02SyncThreadModel.html" />
     <Content Include="src\E06JavaScriptBase.html" />
     <Content Include="src\E07CssPosition.html" />
     <Content Include="src\images\01.jpg" />
@@ -82,6 +85,7 @@
     <Folder Include="src\areas\NewFolder1\" />
     <Folder Include="src\images\" />
     <Folder Include="src\js\controllers\" />
+    <Folder Include="src\js\E02\" />
     <Folder Include="src\js\services\" />
     <Folder Include="src\libs\" />
     <Folder Include="src\js\" />

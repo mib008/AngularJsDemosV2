@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+    <script src="libs/angular/angular.min.js"></script>
+
+    <script src="js/E02/Guid.js"></script>
+    <script src="js/E02/Sync2.js"></script>
+    <title></title>
+</head>
+<body>
+    <button onclick="Sync2()">Sync 2</button>
+
+    <script>
+        function Sync2() {
+            var task = new Task();
+
+            task.createTask('task1', function () {
+                console.log("task1 start.");
+                var timer = setInterval(function() {
+                    clearInterval(timer);
+                    console.log("task1 end.");
+                    task.raiseRunNextTaskEvent();
+                }, 5000);
+            });
+
+            task.createTask('task2', function () {
+                console.log("task2 start.");
+                var timer = setInterval(function () {
+                    clearInterval(timer);
+                    console.log("task2 end.");
+
+                    task.raiseRunNextTaskEvent();
+                }, 5000);
+            });
+
+            task.runSync(['task2', 'task1']);
+        };
+    </script>
+</body>
+</html>
