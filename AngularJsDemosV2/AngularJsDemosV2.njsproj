@@ -40,6 +40,9 @@
     <Compile Include="src\js\controllers\indexController.js" />
     <Compile Include="src\js\E01.js" />
     <Compile Include="src\js\E02\Guid.js" />
+    <Compile Include="src\js\E02\Sync1Amd.js" />
+    <Compile Include="src\js\E02\Sync1.js" />
+    <Compile Include="src\js\E02\Sync2Amd.js" />
     <Compile Include="src\js\E02\Sync2.js" />
     <Compile Include="src\js\index.js" />
     <Compile Include="src\js\A01.js" />

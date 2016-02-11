@@ -11,33 +11,76 @@
     <title></title>
 </head>
 <body>
+    <button onclick="Sync1()">Sync 1</button>
     <button onclick="Sync2()">Sync 2</button>
 
-    <script>
-        function Sync2() {
-            var task = new Task();
+<script>
+    function Sync1() {
+        var task = new Task();
 
-            task.createTask('task1', function () {
-                console.log("task1 start.");
-                var timer = setInterval(function() {
-                    clearInterval(timer);
-                    console.log("task1 end.");
-                    task.raiseRunNextTaskEvent();
-                }, 5000);
-            });
+        task.createTask('task1', function () {
+            console.log("task1 start.");
+            var timer = setInterval(function () {
+                clearInterval(timer);
+                console.log("task1 end.");
+                task.doNextTask("aa");
+            }, 5000);
+        });
 
-            task.createTask('task2', function () {
-                console.log("task2 start.");
-                var timer = setInterval(function () {
-                    clearInterval(timer);
-                    console.log("task2 end.");
+        task.createTask('task2', function () {
+            console.log("task2 start.");
+            var timer = setInterval(function () {
+                clearInterval(timer);
+                console.log("task2 end.");
+                task.doNextTask("bb");
+            }, 5000);
+        });
 
-                    task.raiseRunNextTaskEvent();
-                }, 5000);
-            });
+        task.createTask('task3', function () {
+            console.log("task3 start.");
+            var timer = setInterval(function () {
+                clearInterval(timer);
+                console.log("task3 end.");
+                task.doNextTask("bb");
+            }, 5000);
+        });
 
-            task.runSync(['task2', 'task1']);
-        };
-    </script>
+        task.runSync(['task2', 'task3', 'task1']);
+    };
+
+
+    function Sync2() {
+        var task = new Task();
+
+        task.createTask('task1', function () {
+            console.log("task1 start.");
+            var timer = setInterval(function() {
+                clearInterval(timer);
+                console.log("task1 end.");
+                task.doNextTask("aa");
+            }, 5000);
+        });
+
+        task.createTask('task2', function () {
+            console.log("task2 start.");
+            var timer = setInterval(function () {
+                clearInterval(timer);
+                console.log("task2 end.");
+                task.doNextTask("bb");
+            }, 5000);
+        });
+
+        task.createTask('task3', function () {
+            console.log("task3 start.");
+            var timer = setInterval(function () {
+                clearInterval(timer);
+                console.log("task3 end.");
+                task.doNextTask("bb");
+            }, 5000);
+        });
+
+        task.runSync(['task2', 'task3', 'task1']);
+    };
+</script>
 </body>
 </html>

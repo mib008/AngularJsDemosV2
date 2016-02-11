@@ -17,7 +17,6 @@
         };
     };
     
-    
     window.Task = function () {
         var task = this;        
         var taskId = createTaskId();
@@ -27,7 +26,7 @@
         this.currentExecTask = 0;
         this.taskMap = {};
         
-        this.raiseRunNextTaskEvent = function () {
+        this.doNextTask = function () {
             //This for IE
             if (document.dispatchEvent) {
                 document.dispatchEvent(event);
@@ -36,7 +35,7 @@
             }
         };
         
-        var runNextTaskHandler = function (p1, p2, p3, p4) {
+        var runNextTaskHandler = function (ev) {
             console.log(taskId.uid.ToString('D') + " " + taskId.doNextEventName);
 
             task.currentExecTask++;
@@ -65,7 +64,7 @@
         var runSync = function (tasks) {
             this.execList = [];
 
-            if (tasks　&& tasks instanceof Array) {
+            if (tasks && tasks instanceof Array) {
                 for (var i = 0; i < tasks.length; i++) {
                     if (this.taskMap.hasOwnProperty(tasks[i])) {
                         if (this.taskMap[tasks[i]]) this.execList.push(this.taskMap[tasks[i]]);
