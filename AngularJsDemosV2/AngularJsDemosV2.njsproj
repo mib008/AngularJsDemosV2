@@ -37,17 +37,19 @@
     <Compile Include="src\js\B10.js" />
     <Compile Include="src\js\controllers\B10Controller.js" />
     <Compile Include="src\js\controllers\E01Controller.js" />
+    <Compile Include="src\js\E03\E03Controller.js" />
     <Compile Include="src\js\controllers\indexController.js" />
     <Compile Include="src\js\E01.js" />
     <Compile Include="src\js\E02\Guid.js" />
-    <Compile Include="src\js\E02\Sync1Amd.js" />
+    <Compile Include="src\js\E03\GuidAmd.js" />
+    <Compile Include="src\js\E03\Sync1Amd.js" />
     <Compile Include="src\js\E02\Sync1.js" />
-    <Compile Include="src\js\E02\Sync2Amd.js" />
+    <Compile Include="src\js\E03\Sync2Amd.js" />
     <Compile Include="src\js\E02\Sync2.js" />
+    <Compile Include="src\js\E03\config.js" />
     <Compile Include="src\js\index.js" />
     <Compile Include="src\js\A01.js" />
     <Compile Include="src\js\controllers\A01Controller.js" />
-    <Compile Include="src\js\JavaScript.js" />
     <Compile Include="src\libs\angular-route\angular-route.js" />
     <Compile Include="src\libs\angular-route\angular-route.min.js" />
     <Compile Include="src\libs\angular\angular.js" />
@@ -61,6 +63,7 @@
     <Content Include="src\C07EventBubbling.html" />
     <Content Include="src\E01ECMAScriptBase.html" />
     <Content Include="src\E02SyncThreadModel.html" />
+    <Content Include="src\E03E02Amd.html" />
     <Content Include="src\E06JavaScriptBase.html" />
     <Content Include="src\E07CssPosition.html" />
     <Content Include="src\images\01.jpg" />
@@ -81,6 +84,8 @@
     <Content Include="src\libs\angular\README.md" />
     <Content Include="src\views\B10\detail.html" />
     <Content Include="src\views\B10\list.html" />
+    <Content Include="src\views\E03\E03View2.html" />
+    <Content Include="src\views\E03\E03View1.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="service_middleware\" />
@@ -89,6 +94,7 @@
     <Folder Include="src\images\" />
     <Folder Include="src\js\controllers\" />
     <Folder Include="src\js\E02\" />
+    <Folder Include="src\js\E03\" />
     <Folder Include="src\js\services\" />
     <Folder Include="src\libs\" />
     <Folder Include="src\js\" />
@@ -99,6 +105,7 @@
     <Folder Include="src\views\" />
     <Folder Include="mock\" />
     <Folder Include="src\views\B10\" />
+    <Folder Include="src\views\E03\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
