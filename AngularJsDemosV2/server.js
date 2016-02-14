@@ -6,7 +6,7 @@
 
 var app = express();
 
-var port = process.env.port || 1338;
+var port = process.env.port || 1336;
 
 var packageSetting = eval("(" + fs.readFileSync('package.json', 'utf8') + ")");
 var appSetting = eval("(" + fs.readFileSync(packageSetting.appSetting, 'utf8') + ")");
