@@ -8,7 +8,7 @@
         { id: 3, subject: "subjectDDD", sender: "senderDDD@D.com", tag: "D01" }
     ];
     
-    var module = angular.module('B10Controller', ['ngRoute']);
+    var module = angular.module('B10', ['ngRoute']);
 
     console.log("angularroute value:" + angularroute);
     

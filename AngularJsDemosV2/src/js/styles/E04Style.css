@@ -1,0 +1,16 @@
+﻿body {
+}
+
+
+table {
+
+}
+
+table thead tr {
+    color: white;
+    background: gray;
+}
+
+table thead tr td{
+    padding: 5px 8px;
+}

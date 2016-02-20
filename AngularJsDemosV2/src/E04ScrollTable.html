@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!-- ReSharper disable Html.PathError -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <link href="js/styles/E04Style.css" rel="stylesheet" />
+
+    <title></title>
+</head>
+<body ng-app="myApp">
+
+<div ng-controller="controller">
+    <span>{{item}}</span>
+    <input type="text" value="" ng-model="input"/>
+    <!-- angular.element(this).scope().onTableResize() -->
+    <div id="inputDiv" style="background: lightgoldenrodyellow; display:  inline-block;" resize="alert('You have changed the size of the div')">{{input}}</div>
+    <table >
+        <thead>
+        <tr>
+            <td ng-repeat="item in header">{{item}}</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in data">
+            <td ng-repeat="item in row  track by $index">{{item}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+    <script src="js/controllers/E04Controller.js"></script>
+</body>
+</html>

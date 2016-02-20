@@ -24,7 +24,7 @@ require(['angular', 'domReady', 'controllers/B10Controller'], function (angular,
     'use strict';
     
     domReady(function () {
-        angular.module('B10', ['B10Controller']);
+        // angular.module('B10', ['B10Controller']);
         angular.bootstrap(document, ['B10']);
     });
 });
