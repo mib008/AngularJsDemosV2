@@ -62,19 +62,27 @@ $(document).ready(function () {
         '$scope', function ($scope) {
             $scope.item = "AAA";
 
-            $scope.onTableResize = function() {
-                console.log("onTableResize");
+            var refreshTableHeader = function() {
+                $(".table_body tbody tr:nth-child({0})".replace("{0}", data.length - 1)).ready(function (a, b, c) {
+                    var headerArray = $(".table_head thead tr th");
+                    
+                    $(".table_body thead tr th").each(function (index, item) {
+                        headerArray[index].style.width = item.clientWidth.toString() + "px";
+                    });
+                });
             };
 
-            $("tbody tr:nth-child(3)").ready(function() {
-                console.log("dom 3 ready");
+            $(window).off('resize').on('resize', function() {
+                refreshTableHeader();
             });
             
-            $("tbody tr:nth-child(4)").ready(function () {
-                console.log("dom 4 ready");
-            });
-
-           
+            $scope.onTableResize = function () {
+                console.log("onTableResize");
+            };
+            
+            
+            
+            
             $scope.header = function () {
                 var header = [];
                 
@@ -86,6 +94,9 @@ $(document).ready(function () {
             }();
             
             $scope.data = data;
+
+            refreshTableHeader();
+
         }]);
 
 })(angular, jQuery);
