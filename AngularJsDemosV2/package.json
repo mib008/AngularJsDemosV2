@@ -14,5 +14,8 @@
     "rd": "0.0.2",
     "requirejs": "^2.1.21"
   },
-  "appSetting": "debug.setting.json"
+  "appSetting": "debug.setting.json",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }

@@ -1,0 +1,27 @@
+{
+  "name": "AngularJsDemosV2",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mib008/AngularJsDemosV2",
+  "authors": [
+    "mib008 <mib008@126.com>"
+  ],
+  "description": "Demos",
+  "moduleType": [
+    "amd",
+    "es6",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.5.0",
+    "requirejs": "~2.1.22",
+    "jquery": "~2.2.0"
+  }
+}

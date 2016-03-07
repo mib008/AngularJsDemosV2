@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!-- ReSharper disable Html.PathError -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <link href="js/styles/E04Style.css" rel="stylesheet" />
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body ng-app="myApp">
+
+    <div ng-controller="controller">
+        <span>{{item}}</span>
+        <input type="text" value="" ng-model="input"/>
+
+        <div class="row">
+            <div class="table_row_head">
+                <table class="table_head">
+                    <thead>
+                        <tr>
+                            <th ng-repeat="item in header">{{item}}</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="table_row_body">
+                <table class="table_body">
+                    <thead>
+                        <tr>
+                            <th ng-repeat="item in header">{{item}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in data">
+                            <td ng-repeat="item in row track by $index">{{item}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/controllers/E04Controller.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+    <!-- ReSharper disable Html.PathError -->
+    <script data-main="js/E03/config.js" src="bower_components/requirejs/require.js"></script>
+    <title></title>
+</head>
+<body>
+    <!-- ReSharper disable Html.PathError -->
+    <div>
+        <!-- ReSharper disable once Html.IdNotResolved -->
+        <a href="#/view/">Link to view</a>
+        <a href="#">Back</a>
+        <div ng-view></div>
+    </div>
+
+<div ng-controller="E03Controller" style="border: 1px solid blue; margin: 20px 0;">
+    <span>ng-controller="E03Controller"</span>
+    <div>{{item}}</div>
+    <button ng-click="Sync1()">Sync 1</button>
+    <button ng-click="Sync2()">Sync 2</button>
+    <div>
+        <!-- ReSharper disable once Html.IdNotResolved -->
+        <a href="#/view/">Link to view</a>
+        <a href="#">Back</a>
+    </div>
+</div>
+
+</body>
+</html>
