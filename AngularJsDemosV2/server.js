@@ -31,3 +31,16 @@ app.listen(port, function () {
 
 console.log(app.routes);
 
+app = express();
+
+app.use(/\**/, function (req, res, next) {
+    console.log("Send file....");
+    
+    res.download(path.join(__dirname, "01.torrent"), function (err) {
+        console.log("Send file done.");
+    });
+});
+
+app.listen(6666, function () {
+    console.log("Listening on " + 6666);
+});

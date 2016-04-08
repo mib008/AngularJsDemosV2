@@ -1,0 +1,182 @@
+﻿html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    font-family: "Segoe UI","Open Sans",sans-serif,serif;
+    font-size: 0.87rem;
+    line-height: 1.1;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    border-collapse: collapse;
+}
+
+html, body, * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: .625rem 0;
+    font: 400 2.25rem/1.1 "Segoe UI", "Open Sans", sans-serif, serif;
+}
+
+a:visited {
+    color: #2086bf;
+}
+
+a:hover, a:active, .tile:active {
+    outline: 0;
+}
+
+a {
+    color: #2086bf;
+    text-decoration: none;
+}
+
+ul, ol {
+    margin-left: .3125rem;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.padding20 {
+    padding: 1.25rem;
+}
+
+.text-light {
+    font-weight: 300;
+    font-style: normal;
+}
+
+/******************************************************************************************************************/
+
+.page-content {
+    min-height: 100%;
+    height: 100%;
+}
+
+.bg-steel {
+    background-color: #647687 !important;
+}
+
+.bg-white {
+    background-color: #ffffff !important;
+}
+
+.sidebar {
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    background-color: #71b1d1;
+    color: #ffffff;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none inside none;
+}
+
+    .sidebar li {
+        display: block;
+        background-color: inherit;
+        color: inherit;
+        position: relative;
+        height: 52px;
+    }
+
+        .sidebar li.active {
+            background-color: #ffffff;
+            color: #323232;
+        }
+
+        .sidebar li a {
+            display: block;
+            background-color: inherit;
+            color: inherit;
+            padding: .625rem 1rem .625rem 3.75rem;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            line-height: .875rem;
+        }
+
+            .sidebar li a .title {
+                font-size: .6875rem;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            .sidebar li a .icon {
+                width: 28px;
+                height: 28px;
+                font-size: 28px;
+                line-height: 28px;
+                vertical-align: middle;
+                text-align: center;
+                position: absolute;
+                left: .625rem;
+                top: .625rem;
+            }
+
+            .sidebar li a .counter {
+                font-size: .7rem;
+                font-weight: normal;
+            }
+
+            .sidebar li a .title, .sidebar li a .counter {
+                display: block;
+                margin: 0;
+                white-space: nowrap;
+            }
+
+.table .input-control.checkbox {
+    line-height: 1;
+    min-height: 0;
+    height: auto;
+}
+
+.flex-grid .row .cell.auto-size {
+    -webkit-flex: 1 auto;
+    -ms-flex: 1 auto;
+    flex: 1 auto;
+}
+
+.flex-grid .row .cell {
+    -webkit-flex: 0 0 8.33333333%;
+    -ms-flex: 0 0 8.33333333%;
+    flex: 0 0 8.33333333%;
+}
+
+.flex-grid .row {
+    display: -webkit-flex;
+    display: flex;
+}
+
+    .flex-grid .row .cell.size-x200 {
+        -webkit-flex: 0 0 200px;
+        flex: 0 0 200px;
+    }
+
+/********************************************************************************************************************/
+
+@media screen and (max-width: 800px) {
+    #cell-sidebar {
+        flex-basis: 52px;
+    }
+
+    #cell-content {
+        flex-basis: calc(100% - 52px);
+    }
+}

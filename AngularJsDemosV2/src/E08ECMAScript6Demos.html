@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- ReSharper disable Html.PathError -->
+    <link href="bower_components/metro/build/css/metro-icons.min.css" rel="stylesheet" />
+
+    <script data-main="js/E08/main.js" src="bower_components/requirejs/require.js"></script>
+    <!-- ReSharper restore Html.PathError -->
+    <link href="styles/E08Style.css" rel="stylesheet" />
+    <title>ECMAScript6 Demos</title>
+
+    <script>
+        //function pushMessage(t){
+        //    var mes = 'Info|Implement independently';
+        //    $.Notify({
+        //        caption: mes.split("|")[0],
+        //        content: mes.split("|")[1],
+        //        type: t
+        //    });
+        //};
+
+        //$(function() {
+        //    $('.sidebar').on('click', 'li', function() {
+        //        if (!$(this).hasClass('active')) {
+        //            $('.sidebar li').removeClass('active');
+        //            $(this).addClass('active');
+        //        }
+        //    });
+        //});
+    </script>
+</head>
+<body class="bg-steel" ng-controller="E08Controller">
+<div class="page-content">
+    <div class="flex-grid no-responsive-future" style="height: 100%;">
+        <div class="row" style="height: 100%">
+            <div class="cell size-x200" id="cell-sidebar" style="background-color: #71b1d1; height: 100%">
+                <ul class="sidebar">
+                    <li ng-repeat="chapter in chapterList" ng-class="{active: isActive(chapter.href)}">
+                        <a sref="{{chapter.viewState}}">
+                            <span class="mif-apps icon"></span>
+                            <span class="title" ng-bind="chapter.title"></span>
+                            <span class="counter" ng-bind="chapter.counter || 0"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="cell auto-size padding20 bg-white" id="cell-content" ui-view>
+               
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

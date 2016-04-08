@@ -1,4 +1,7 @@
-﻿define(['angular'], function (angular) {
+﻿
+// ReSharper disable Es6Feature
+
+define(['angular'], function (angular) {
     "use strict";
     
     var ecmaFuncs = function () {
